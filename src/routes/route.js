@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const path = require('path')
 const players = require('../players/players');
 
 
@@ -43,12 +44,40 @@ router.get("/missingnumber2", function (req, res) {
     res.send(  { data: missingNumber  }  );
   });
   
- 
+//   Branch for this assignment is assignment/get-api
+//   Create an API for GET /movies that returns a list of movies. Define an array of movies in your code and return the value in response.
+//   Create an API GET /movies/:indexNumber (For example GET /movies/1 is a valid request and it should return the movie in your array at index 1). You can define an array of movies again in your api
+router.get("/movies" , function(req, res) {
+    res.send("hi there")
+    var a = ["Rang de basanti", "The shining", "Lord of the rings", "Batman begins"];
+    a.forEach((i) => {
+        (console.log(i));    
+    }) 
+});
+//Write another api called GET /films. Instead of an array of strings define an array of movie objects this time. Each movie object should have values - id, name.
+router.get("/films" , function(req, res) {
 
+var movies = [
+   {id: 1, name: "The Shining"},{id: 2, name: "After Earth"},{id: 3, name: "Rang de Basanti"},{id: 4, name: "Spider Men"}
+];
+res.json(movies);
+});
 
-
-
-
+// Create an API GET /movies/:indexNumber (For example GET /movies/1 is a valid request and it should return the movie in your array at index 1). You can define an array of movies again in your api
+router.get("/films/:id", function(req, res){
+  
+    var movies = [
+        {id: 1, name: "The Shining"},
+        {id: 2, name: "After Earth"},
+        {id: 3, name: "Rang de Basanti"},
+        {id: 4, name: "Spider Men"}
+     ];
+     function getMovies(indexNumber) {
+        res.moviesby[indexNumber];
+     }
+     res.json(movies);    
+});
+   
 
 router.get("/test-api" , function(req, res) {
     res.send("hi FunctionUp")

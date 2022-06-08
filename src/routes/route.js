@@ -9,15 +9,14 @@ router.get("/test-me", function (req, res) {
 })
 
 router.post("/createUser", UserController.createUser  )
-
 router.get("/getUsersData", UserController.getUsersData)
 
-router.post("/createBook", BookController.createBook  )
+router.post("/createAuthor", BookController.creatAuther)
 
-router.get("/getBooksData", BookController.getBooksData)
+router.post("/createBook", BookController.createBook)
 
-router.post("/updateBooks", BookController.updateBooks)
-router.post("/deleteBooks", BookController.deleteBooks)
+router.get("/getBooksbyChetanBhagat", BookController.getBooksbyChetanBhagat)
+router.get("/authorofBook", BookController.authorofBook)
 
 //MOMENT JS
 const moment = require('moment');
